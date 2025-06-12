@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f2ff;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2 {
+  font-weight: 700;
+  transition: all 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+  padding: 1rem 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+}
+
+.nav-link {
+  color: white !important;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background: no-repeat center/cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/hero_bg.jpg');
+  height: 100vh;
+  color: white;
+  text-shadow: 0 0 10px #151515;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* About Section */
+#about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6f34c6;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+#about p {
+  font-size: 1rem;
+  color: #444;
+  text-align: justify;
+  line-height: 1.8;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+#about .col-md-6:nth-child(1) {
+  padding-right: 30px;
+}
+
+#about .col-md-6:nth-child(2) {
+  background: url('assets/about.jpg') no-repeat center/contain;
+  min-height: 300px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Tutorials */
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 20px;
+  animation: zoomFade 0.8s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  max-height: 80px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+@keyframes zoomFade {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Card Body */
+.card-body h5 {
+  font-weight: 600;
+}
+
+.card-body {
+  min-height: 200px;
+}
+
+/* AI Chatbot */
+.chat-box {
+  border-radius: 25px;
+  border: 2px solid #ddd;
+  background: #ffffff;
+  box-shadow: 8px 8px 20px rgba(140, 76, 227, 0.2);
+  transition: all 0.3s ease;
+}
+
+.chat-box:hover {
+  box-shadow: 12px 12px 28px rgba(140, 76, 227, 0.25);
+}
+
+.chat-box input {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+.btn {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.btn-light {
+  background: white;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #8c4ce3, #6f34c6);
+  border: none;
+}
+
+/* Feedback Form */
+form input,
+form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  background: #fefefe;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #8c4ce3;
+  outline: none;
+  box-shadow: 0 0 6px rgba(140, 76, 227, 0.5);
+}
+
+form textarea {
+  resize: none;
+}
+
+/* Contact */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+#contact img{
+  height: 400px;
+  width: 480px;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Footer */
+footer {
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tutorial-card {
+    margin-bottom: 20px;
+  }
+
+  .chat-box {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .nav-link {
+    margin-left: 1rem;
+  }
+
+  .hero-img {
+    max-height: 200px;
+  }
+}
